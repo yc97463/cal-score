@@ -1,5 +1,4 @@
 var score = [], rate = [], semesterScore, response;
-            
 function form() {
     var form_i;
     for(form_i=0;form_i<4;form_i++){
