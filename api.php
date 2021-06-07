@@ -18,9 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") { //如果是 POST 請求
             };   
         }else{
             $scorce2 = floor((60-$scorce)/0.3-1);
-            $scorce3 = (40-$scorce)/0.3;
+            $scorce3 = floor((40-$scorce)/0.3-1);
             $sc3out = round($scorce2,2);
-            $sc3out2 = round($scorce3,2);
+            $sc3out2 = round($scorce3);
         };
           
         
@@ -45,5 +45,4 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") { //如果是 POST 請求
         'errorMsg' => '請求無效，只允許 POST 方式訪問！'
     ));
 }
-include('_~db.php');
 ?>
