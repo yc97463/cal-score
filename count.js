@@ -1,10 +1,10 @@
 var score = [], rate = [], semesterScore, response;
-function form() {
+/*function form() {
     var form_i;
     for(form_i=0;form_i<4;form_i++){
         document.getElementById('form').innerHTML += `<input id="score`+form_i+`" value="`+form_i+`"><input id="rate`+form_i+`"><hr>`;
     }
-}
+}*/
 function countScore() {
     score = [], rate = [], semesterScore = 0;
     for(form_i=0;form_i<4;form_i++){
@@ -71,3 +71,15 @@ function countScore_draft() {
     document.getElementById('result').innerHTML=response;
 }
 console.log('online');
+
+//通知關閉
+document.addEventListener('DOMContentLoaded', () => {
+  (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+    const $notification = $delete.parentNode;
+
+    $delete.addEventListener('click', () => {
+      $notification.parentNode.removeChild($notification);
+    });
+  });
+});
+
