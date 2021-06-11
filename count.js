@@ -12,6 +12,10 @@ function countScore() {
         rate.push(Number(document.getElementById('rate'+form_i).value/100));
         semesterScore += (score[form_i]*rate[form_i]);
     }
+    if(!rate[2]){
+        rate[2] = '0';
+        document.getElementById('rate2').value = `0`;
+    }
     document.getElementById('result').innerHTML = `您目前學期成績為 `+semesterScore+` 分`;
     //var response 算出總評（是否要補考、補修）
     if(!score[2]){
@@ -48,8 +52,14 @@ function countScore() {
         }
     }
     document.getElementById('result').innerHTML += `。`;
+    for(form_i=0;form_i<4;form_i++){
+        document.getElementById('score'+form_i).value = ``;
+    }
+    document.getElementById('score1').autofocus;
+
 }
 
+/*
 function countScore_draft() {
     if(!examLast){
         var examLast = 0;
@@ -72,6 +82,7 @@ function countScore_draft() {
     document.getElementById('result').innerHTML=response;
 }
 console.log('online');
+*/
 
 //關閉通知
 document.addEventListener('DOMContentLoaded', () => {
