@@ -21,7 +21,8 @@ function countScore() {
             score[2] = Number((40-semesterScore)/rate[2]);
             if(score[2]>100){
                 //無法補考
-                document.getElementById('result').innerHTML += `且無法補考`;
+                // document.getElementById('result').innerHTML += `且無法補考`;
+                document.getElementById('result').innerHTML += `三段考 `+ score[2] +` 分才能補考，你還是放棄吧`;
             }else{
                 document.getElementById('result').innerHTML += `但三段考 `+ score[2] +` 分就可以補考`;
                 //可補考
@@ -42,7 +43,7 @@ function countScore() {
                 //可補考
             }
         }else{
-            document.getElementById('result').innerHTML += `，恭喜過關`;
+            document.getElementById('result').innerHTML += `，恭喜過關，<del>三段不用努力囉</del>`;
             //恭喜過關
         }
     }
@@ -72,7 +73,7 @@ function countScore_draft() {
 }
 console.log('online');
 
-//通知關閉
+//關閉通知
 document.addEventListener('DOMContentLoaded', () => {
   (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
     const $notification = $delete.parentNode;
